@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioCast", "DesafioCast\DesafioCast.csproj", "{164FC490-E609-4EE9-9C24-78C15074695F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{164FC490-E609-4EE9-9C24-78C15074695F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{164FC490-E609-4EE9-9C24-78C15074695F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{164FC490-E609-4EE9-9C24-78C15074695F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{164FC490-E609-4EE9-9C24-78C15074695F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BD9F2BF-32FB-49E0-8934-C6258F94E728}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<DesafioCast.Models.Livro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Livros</h2>
+
+<p>
+    <a asp-controller="Livro" asp-action="CadastroLivro">Cadastrar um novo livro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+               Descrição
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditarLivro", new { id = item.Id }) |
+                @Html.ActionLink("Detalhar", "DetalharLivro", new { id = item.Id }) |
+
+                <a asp-controller="livro" asp-action="delete" asp-route-id="@item.Id "
+                   onclick="return confirm('Deseja mesmo excluir esse livro?')">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

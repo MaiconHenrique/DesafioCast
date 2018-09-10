@@ -1,0 +1,53 @@
+﻿@model DesafioCast.Models.Emprestimo
+
+@{
+    ViewData["Title"] = "CadastrarEmprestimo";
+}
+
+<h2>CadastrarEmprestimo</h2>
+
+<h4>Emprestimo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="emprestimo" asp-action="CadastroEmprestimo" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdCliente" class="control-label">Cliente</label>
+                <input asp-for="IdCliente" class="form-control" />
+                <span asp-validation-for="IdCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdLivro" class="control-label">Livro</label>
+                <input asp-for="IdLivro" class="form-control" />
+                <span asp-validation-for="IdLivro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataEntrega" class="control-label">Data de entrega(MM/dd/yyyy)</label>
+                <input type="text" asp-for="DataEntrega" id="datepicker" class="datepicker" />
+                <span asp-validation-for="DataEntrega" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-success" 
+                       onclick="return alert('Emprestimo realizado com sucesso!')"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Emprestimo">Emprestimos</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).on('ready', function () {
+            $(".datepicker").datepicker();
+        });
+    </script>
+}

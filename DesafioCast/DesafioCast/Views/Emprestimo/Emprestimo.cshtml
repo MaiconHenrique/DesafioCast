@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DesafioCast.Models.Emprestimo>
+
+@{
+    ViewData["Title"] = "Emprestimo";
+}
+
+<h2>Emprestimos</h2>
+
+<p>
+    <a asp-controller="Emprestimo" asp-action="CadastroEmprestimo">Cadastrar um novo empréstimo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+               
+               ID do cliente
+            </th>
+            <th>
+               
+                ID do livro
+            </th>
+            <th>
+    
+               Data Alugada
+            </th>
+            <th>
+              
+                Data de entrega
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdLivro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAluguel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEntrega)
+            </td>
+            <td>
+                <a asp-controller="emprestimo" asp-action="DevolverLivro" asp-route-id="@item.Id "
+                   onclick="return confirm('Deseja mesmo encerrar esse empréstimo?')">Delvolver</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

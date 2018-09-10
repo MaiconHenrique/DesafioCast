@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DesafioCast.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Cliente";
+}
+
+<h2>Cliente</h2>
+
+<p>
+    <a asp-controller="Cliente" asp-action="CadastroCliente">Cadastrar um novo cliente</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cpf)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarCliente", new { id = item.Id }) |
+                    @Html.ActionLink("Detalhar", "DetalharCliente", new { id = item.Id }) |
+
+                    <a asp-controller="cliente" asp-action="delete" asp-route-id="@item.Id "
+                       onclick="return confirm('Deseja mesmo excluir esse cliente?')">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
